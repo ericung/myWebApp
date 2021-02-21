@@ -14,7 +14,7 @@ namespace myWebApp.Controllers
         }
 
         // 
-        // GET: /HelloWorld/Welcome/ 
+        // GET: /Home/Welcome/ 
 
         public string Welcome()
         {
