@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using myWebApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace myWebApp
 {
@@ -23,6 +25,9 @@ namespace myWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<myWebAppContext>(options =>
+            options.UseSqlite(Configuration.GetConnectionString("myWebAppContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
